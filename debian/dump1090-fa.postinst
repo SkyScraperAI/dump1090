@@ -34,6 +34,9 @@ case "$1" in
         # plugdev required for bladeRF USB access
         adduser "$RUNAS" plugdev
 
+				# workaround for package install isues with soapysdr-module-audio
+				adduser "$RUNAS" audio
+
         # set up lighttpd
         if dpkg --compare-versions "$2" lt "3.1.0"
         then
